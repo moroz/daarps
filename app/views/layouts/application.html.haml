@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 %html
   %head
-    %title= @title
+    %title= @title ? @title + " – Work on Personal" : "Work on Personal, Ltd."
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = stylesheet_link_tag 'custom', media: 'all', 'data-turbolinks-track' => true
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
     = csrf_meta_tags
 
   %body
-    = yield
+    = render "shared/row2"
+    = render "shared/row1"
+    .row3
+      .wrapper.container
+        = yield
+    = render "shared/row4"

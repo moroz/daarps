@@ -1,8 +1,11 @@
 GIT
-  remote: git://github.com/svenfuchs/i18n.git
-  revision: f19893d84262261d9c8abe303f465ea28ba057e4
+  remote: git://github.com/svenfuchs/rails-i18n.git
+  revision: 5b4d5279a99e8eb19fc75282d21424b99f65a265
+  branch: master
   specs:
-    i18n (0.7.0)
+    rails-i18n (4.0.5)
+      i18n (~> 0.6)
+      railties (~> 4.0)
 
 GEM
   remote: https://rubygems.org/
@@ -79,6 +82,7 @@ GEM
       haml (~> 4.0.0)
       nokogiri (~> 1.6.0)
       ruby_parser (~> 3.5)
+    i18n (0.7.0)
     jbuilder (2.3.1)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -180,11 +184,11 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   haml-rails
-  i18n!
   jbuilder (~> 2.0)
   jquery-rails
   mysql2
   rails (= 4.2.3)
+  rails-i18n!
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring

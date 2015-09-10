@@ -1,0 +1,11 @@
+.row2
+  .wrapper.container
+    .row
+      .col-sm-3
+        = link_to t("home"), root_path, :locale => current_locale
+      .col-sm-3
+        = link_to t("contact"), :controller => :pages, :action => :contact, :locale => current_locale
+      .col-sm-3
+        = link_to t("offers"), :controller => :pages, :action => :offers, :locale => current_locale
+      .col-sm-3
+        = link_to t("employer"), :controller => :pages, :action => :employer, :locale => current_locale

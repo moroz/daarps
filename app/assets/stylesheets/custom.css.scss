@@ -1,3 +1,17 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 85%;
+}
+
+body {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Geneva, Arial, sans-serif;
+}
+
 .wrapper {
   max-width: 800px;
   margin: 0 auto;
@@ -6,22 +20,29 @@
 
 .row1 {
   // padding: 1em;
-  background-color: #db8000;
+  background-color: #ddd;
 }
 
 h1 {
-  color: #0f0a99;
+  color: #007942;
 }
 
 .row2 {
   // padding: 1em;
-  background-color: #dba600;
+  background-color: #004170;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.25rem;
 }
 
 .row3 {
   background-color: #ffad39;
+  // max-height: 100%;
+  // display: block;
+  // box-sizing: border-box;
+  font-size: 1.1rem;
 }
 
 .row4 {
-  background-color: #dba600;
+  background-color: #FFE219;
 }
