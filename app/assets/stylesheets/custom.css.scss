@@ -23,12 +23,11 @@ body {
   background-color: #ddd;
 }
 
-h1 {
+h1, h2, h3, h4 {
   color: #007942;
 }
 
 .row2 {
-  // padding: 1em;
   background-color: #004170;
   color: #fff;
   font-weight: 600;
@@ -37,9 +36,6 @@ h1 {
 
 .row3 {
   background-color: #ffad39;
-  // max-height: 100%;
-  // display: block;
-  // box-sizing: border-box;
   font-size: 1.1rem;
 }
 

@@ -1,0 +1,7 @@
+%h2 Oferty pracy
+
+<p>W tej chwili potrzebujemy głównie ludzi na stanowiska:</p>
+%ul
+  = render @offers, :partial => 'offers/offer_list'
+
+= link_to "Dodaj nową ofertę", '/offers/new'

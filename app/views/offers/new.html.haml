@@ -1,0 +1,9 @@
+= form_for @new_offer do |f|
+  .form-group
+    = f.label :content, "Tytuł:"
+    = f.text_field :title, :class => "form-control"
+
+  .form-group
+    = f.label :content, "Opis oferty:"
+    = f.text_area :content, :class => "form-control"
+  = f.submit "Zapisz ofertę"
