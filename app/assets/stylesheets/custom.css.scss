@@ -12,6 +12,24 @@ body {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Geneva, Arial, sans-serif;
 }
 
+a {
+  color: #007942;
+}
+
+a:hover {
+  color: #4a9d00;
+}
+
+a:visited {
+  color: #074570;
+}
+
+.round {
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
 .wrapper {
   max-width: 800px;
   margin: 0 auto;
@@ -20,7 +38,7 @@ body {
 
 .row1 {
   // padding: 1em;
-  background-color: #ddd;
+  background-color: #ccc;
 }
 
 h1, h2, h3, h4 {
@@ -28,17 +46,47 @@ h1, h2, h3, h4 {
 }
 
 .row2 {
-  background-color: #004170;
+  background-color: #04365A;
   color: #fff;
   font-weight: 600;
   font-size: 1.25rem;
+  border-bottom: solid 5px #125788;
+}
+
+.row2 a {
+  color: #ccc;
+}
+
+.row1__flag {
+  position: relative;
+  float: right;
+}
+
+.row1__flag--border {
+  border: solid 1px #000;
 }
 
 .row3 {
-  background-color: #ffad39;
+  background-color: #ddd;
   font-size: 1.1rem;
 }
 
 .row4 {
-  background-color: #FFE219;
+  background-color: #4a9d00;
+}
+
+.offers__form--textarea {
+}
+
+.offers__hints {
+  background-color: #ddd;
+  border: solid 1px #999;
+  padding: 0.5em;
+  margin-bottom: 1em;
+}
+
+@media(min-width: 500px) {
+  .offers__hints {
+    margin-bottom: 0;
+  }
 }

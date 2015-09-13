@@ -3,7 +3,16 @@
     = f.label :content, "Tytuł:"
     = f.text_field :title, :class => "form-control"
 
-  .form-group
-    = f.label :content, "Opis oferty:"
-    = f.text_area :content, :class => "form-control"
+  .row
+    .form-group
+      .col-sm-9
+        = f.label :content, "Opis oferty:"
+        = f.text_area :content, :class => "form-control offers__form--textarea", :rows => 10
+    .col-sm-3
+      .offers__hints.round
+        W tekście oferty można używać formatowania:<br/>
+        <strong>*pogrubienie*</strong><br/>
+        <em>_tekst pochyły_</em><br/>
+        = link_to "Więcej informacji", "http://redcloth.org/textile"
+
   = f.submit "Zapisz ofertę"
