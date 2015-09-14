@@ -1,0 +1,36 @@
+.col-sm-5
+  %h3 O nas
+  %p
+    e-mail: info (at) workonpersonal.pl<br/>
+    tel. +48 515 287 274<br/>
+    = link_to "www.workonpersonal.pl", "http://www.workonpersonal.pl"
+
+  %p
+    <strong>Konsultanci:</strong><br/>
+    Agnieszka Młynarczyk<br/>
+    tel. +48 518 461 875<br/>
+    e-mail: agnieszka.mlynarczyk (at) op.pl</p>
+
+  %p
+    Rafał Szczęsny<br/>
+    tel. +48 607 968 294<br/>
+    e-mail: rafal.szczesny (at) op.pl</p>
+
+.col-sm-7
+  %h3 Formularz kontaktowy
+
+  = form_for @contact do |f|
+    .form-group
+      = f.label :name, "Imię i nazwisko:"
+      = f.text_field :name, :required => true, :class => "form-control"
+    .form-group
+      = f.label :email, "Adres e-mail:"
+      = f.text_field :email, :required => true, :class => "form-control"
+    .form-group
+      = f.label :message, "Wiadomość:"
+      = f.text_area :message, :required => true, :rows => 8, :class => "form-control"
+    .hidden
+      = f.text_field :nickname, :hint => 'Leave this field blank!'
+      <br />
+    .form-group
+      = f.submit 'Wyślij', :class=> "btn btn-primary form-control"

@@ -42,15 +42,16 @@ a:visited {
 }
 
 h1, h2, h3, h4 {
-  color: #007942;
+  color: #d8461f;
 }
 
 .row2 {
-  background-color: #04365A;
+  background-color: #005ea8;
   color: #fff;
+  text-align: center;
   font-weight: 600;
   font-size: 1.25rem;
-  border-bottom: solid 5px #125788;
+  border-bottom: solid 5px #0086c8;
 }
 
 .row2 a {
@@ -69,10 +70,11 @@ h1, h2, h3, h4 {
 .row3 {
   background-color: #ddd;
   font-size: 1.1rem;
+  min-height: 60%;
 }
 
 .row4 {
-  background-color: #4a9d00;
+  background-color: #da642d;
 }
 
 .offers__form--textarea {
