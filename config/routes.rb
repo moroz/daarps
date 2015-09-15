@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'contacts/new'
-
   get 'contacts/create'
   resources :contacts, :only => [:new, :create]
 
@@ -11,6 +10,10 @@ Rails.application.routes.draw do
   resources :offers#, :only => [:index, :show, :new, :create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+
+  get '/log-in' => 'sessions#new'
+  post '/log-in' => 'sessions#create'
+  get '/log-out' => 'sessions#destroy', as: :log_out
 
   # You can have the root of your site routed with "root"
   root 'pages#home'
