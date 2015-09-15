@@ -1,7 +1,7 @@
 .col-sm-5
   %h3 Dane kontaktowe
   %p
-    e-mail: info&#64;workonpersonal&#46;pl<br/>
+    e-mail: info (at) workonpersonal.pl<br/>
     tel. +48 515 287 274<br/>
     = link_to "www.workonpersonal.pl", "http://www.workonpersonal.pl"
 
