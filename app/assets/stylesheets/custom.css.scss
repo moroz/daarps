@@ -48,7 +48,6 @@ h1, h2, h3, h4 {
 .row2 {
   background-color: #074570;
   color: #fff;
-  // text-align: center;
   font-weight: 600;
   font-size: 1.25rem;
   border-bottom: solid 5px #125788;
@@ -89,6 +88,10 @@ h1, h2, h3, h4 {
 @media(min-width: 500px) {
   .offers__hints {
     margin-bottom: 0;
+  }
+
+  .row2 {
+    text-align: center;
   }
 
   .row3 {
