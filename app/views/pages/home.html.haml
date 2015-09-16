@@ -1,9 +1,25 @@
-Witamy na stronie Work On Personal, Ltd.!
+<p>Witamy na stronie DAAR Personal Service GmbH. Zajmujemy się pośrednictwem pracy na terenie Niemiec.
+Jeżeli szukasz pracy &mdash; pomożemy Ci znaleźć legalną pracę w Twoim zawodzie. Zapoznaj się z
+ofertami pracy w dziale
+= link_to "„Dla kandydata”", '/offers/pl'
+i
+= link_to "skontaktuj się", '/contact/pl'
+z nami.</p>
 
-Jeżeli szukasz pracy, to dobrze trafiłeś, zapraszamy do działu „oferty pracy”.
+<p>Jeżeli prowadzisz firmę i chciałbyś zatrudnić wykwalifikowanych pracowników z Polski, pomożemy Ci
+znaleźć odpowiednich ludzi.
+= (link_to "Napisz do nas", '/contact/pl') + ','
+a znajdziemy potrzebnych Ci pracowników w naszej bazie. Zawiera ona już ponad 1500 kandydatów
+wykwalifikowanych w różnych dziedzinach, m.&nbsp;in. elektryków, spawaczy, lakierników samochodowych,
+hydraulików i malarzy, gotowych podjąć pracę na terenie Unii Europejskiej.</p>
 
-Jeżeli jesteś pracodawcą i szukasz pracownika, trafiłeś pod właściwy adres.
-
-W swojej bazie posiadamy ponad 1500 kandydatów w różnych zawodach gotowych podjąć pracę w UE.
-
-Potrzebujesz pracownika? Zachęcamy do kontaktu.
+.row.magic_orbs
+  .col-sm-4
+    %h3= link_to "Dla kandydata", '/offers/pl'
+    = link_to (image_tag 'magic_orb1.jpg', :class => "magic_orbs--circle img-responsive img-circle circle-block"), "/offers/pl"
+  .col-sm-4
+    %h3= link_to "Dla pracodawcy", '/pracodawca'
+    = link_to (image_tag 'magic_orb2.jpg', :class => "magic_orbs--circle img-responsive img-circle circle-block"), "/pracodawca"
+  .col-sm-4
+    %h3= link_to "Kontakt", '/contact/pl'
+    = link_to (image_tag 'magic_orb3.jpg', :class => "magic_orbs--circle img-responsive img-circle circle-block"), "/contact/pl"

@@ -85,6 +85,17 @@ h1, h2, h3, h4 {
   margin-bottom: 1em;
 }
 
+.magic_orbs {
+  text-align: center;
+  a {
+    color: #007942;
+  }
+}
+
+.magic_orbs--circle {
+  border: solid 3px #074570;
+}
+
 @media(min-width: 500px) {
   .offers__hints {
     margin-bottom: 0;
