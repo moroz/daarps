@@ -87,6 +87,7 @@ h1, h2, h3, h4 {
 
 .magic_orbs {
   text-align: center;
+
   a {
     color: #007942;
   }
@@ -94,6 +95,8 @@ h1, h2, h3, h4 {
 
 .magic_orbs--circle {
   border: solid 3px #074570;
+  max-width: 90%;
+  margin: 0 auto;
 }
 
 @media(min-width: 500px) {

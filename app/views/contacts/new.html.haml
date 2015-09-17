@@ -1,36 +1,53 @@
 .col-sm-5
-  %h3 Dane kontaktowe
+  %h3= t("dane_kontaktowe")
   %p
-    e-mail: info&#64;workonpersonal&#46;pl<br/>
-    tel. +48 515 287 274<br/>
+    = t("email")
+    info&#64;workonpersonal&#46;pl<br/>
+    = t("tel")
+    +48 515 287 274<br/>
     = link_to "www.workonpersonal.pl", "http://www.workonpersonal.pl"
 
   %p
-    <strong>Konsultanci:</strong><br/>
-    Agnieszka Młynarczyk<br/>
-    tel. +48 518 461 875<br/>
-    e-mail: agnieszka&#46;mlynarczyk&#64;op&#46;pl</p>
+    %strong= t("konsultanci")
+    %br
+    %strong Dariusz Wierzbicki<br/>
+    = t("tel")
+    +49 36462 92715<br/>
+    = (t "handy")
+    +49 177 3895604
+    %br
+    = t("email_short")
+    dariusz&#46;wierzbicki&#64;daar-ps&#46;de
 
   %p
-    Rafał Szczęsny<br/>
-    tel. +48 607 968 294<br/>
-    e-mail: rafal&#46;szczesny&#64;op&#46;pl</p>
+    %strong Agnieszka Młynarczyk<br/>
+    = t("tel")
+    +48 518 461 875<br/>
+    = t("email_short")
+    agnieszka&#46;mlynarczyk&#64;op&#46;pl
+
+  %p
+    %strong Rafał Szczęsny<br/>
+    = t("tel")
+    +48 607 968 294<br/>
+    = t("email_short")
+    rafal&#46;szczesny&#64;op&#46;pl
 
 .col-sm-7
-  %h3 Formularz kontaktowy
+  %h3= t("formularz_kontaktowy")
 
   = form_for @contact do |f|
     .form-group
-      = f.label :name, "Imię i nazwisko:"
+      = f.label :name, t("name")
       = f.text_field :name, :required => true, :class => "form-control"
     .form-group
-      = f.label :email, "Adres e-mail:"
+      = f.label :email, t("email")
       = f.text_field :email, :required => true, :class => "form-control"
     .form-group
-      = f.label :message, "Wiadomość:"
+      = f.label :message, t("message")
       = f.text_area :message, :required => true, :rows => 8, :class => "form-control"
     .hidden
       = f.text_field :nickname, :hint => 'Leave this field blank!'
       <br />
     .form-group
-      = f.submit 'Wyślij', :class=> "btn btn-primary form-control"
+      = f.submit t("send"), :class=> "btn btn-primary form-control"

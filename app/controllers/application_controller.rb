@@ -9,9 +9,15 @@ class ApplicationController < ActionController::Base
     { locale: I18n.locale }.merge options
   end
 
+  # def set_locale
+  #   I18n.locale = params[:locale] || I18n.default_locale
+  # end
+
   def set_locale
-    I18n.locale = params[:locale] || I18n.default_locale
+    I18n.locale = params[:locale] || http_accept_language.compatible_language_from(I18n.available_locales)
   end
+
+private
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]

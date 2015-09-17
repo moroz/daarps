@@ -4,6 +4,17 @@ pl:
   employer: "Dla pracodawcy"
   contact: "Kontakt"
   candidate: "Dla kandydata"
+  arbeitsueberlassung: "oferty pracy"
+  dane_kontaktowe: "Dane kontaktowe"
+  formularz_kontaktowy: "Formularz kontaktowy"
+  name: "Imię i nazwisko:"
+  email: "Adres e-mail:"
+  email_short: "e-mail:"
+  message: "Wiadomość:"
+  send: "Wyslij!"
+  handy: "tel. kom."
+  tel: "tel."
+  konsultanci: "Konsultanci:"
 
   will_paginate:
     next_label: "Następna &#8594;"

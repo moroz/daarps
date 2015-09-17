@@ -17,6 +17,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'therubyracer', platforms: :ruby
 gem 'mail_form'
 gem 'thin'
+gem 'http_accept_language'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
