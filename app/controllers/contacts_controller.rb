@@ -8,6 +8,7 @@ class ContactsController < ApplicationController
     @contact.request = request
     if @contact.deliver
       flash.now[:success] = 'Wiadomość została wysłana.'
+      redirect_to :back
     else
       flash.now[:danger] = 'Przy wysyłaniu wiadomości wystąpił problem.'
       render :new
