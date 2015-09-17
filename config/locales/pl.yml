@@ -3,6 +3,7 @@ pl:
   offers: "Dla kandydata"
   employer: "Dla pracodawcy"
   contact: "Kontakt"
+  candidate: "Dla kandydata"
 
   will_paginate:
     next_label: "Następna &#8594;"

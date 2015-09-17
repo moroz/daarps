@@ -13,13 +13,4 @@ a znajdziemy potrzebnych Ci pracowników w naszej bazie. Zawiera ona już ponad 
 wykwalifikowanych w różnych dziedzinach, m.&nbsp;in. elektryków, spawaczy, lakierników samochodowych,
 hydraulików i malarzy, gotowych podjąć pracę na terenie Unii Europejskiej.</p>
 
-.row.magic_orbs
-  .col-sm-4
-    %h3= link_to "Dla kandydata", '/offers/pl'
-    = link_to (image_tag 'magic_orb1.jpg', :class => "magic_orbs--circle img-responsive img-circle circle-block"), "/offers/pl"
-  .col-sm-4
-    %h3= link_to "Dla pracodawcy", '/pracodawca'
-    = link_to (image_tag 'magic_orb2.jpg', :class => "magic_orbs--circle img-responsive img-circle circle-block"), "/pracodawca"
-  .col-sm-4
-    %h3= link_to "Kontakt", '/contact/pl'
-    = link_to (image_tag 'magic_orb3.jpg', :class => "magic_orbs--circle img-responsive img-circle circle-block"), "/kontakt"
+= render 'magic_orbs'
