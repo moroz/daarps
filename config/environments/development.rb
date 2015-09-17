@@ -41,10 +41,14 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address: 'mail.daar-ps.de',
+    #address: 'smtp.gmail.com',
     port: 587,
     domain: 'daar-ps.de',
     user_name: 'mailer@daar-ps.de',
+    #user_name: 'dmuhafc',
     password: 'xfEKjQLV',
+    #password: 'Mb2phKEK',
+    authentication: 'plain',
     enable_starttls_auto: true
   }
 end
