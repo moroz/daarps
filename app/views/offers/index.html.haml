@@ -6,6 +6,8 @@
   %ul
     = render @offers, :partial => 'offers/offer_list'
 - else
-  <p>W tej chwili w bazie nie ma żadnych ofert pracy. Aby bazie nie było smutno &mdash; dodaj nową ofertę do bazy korzystając z linka „Dodaj nową ofertę” poniżej.</p>
+  <p>W tej chwili w bazie nie ma żadnych ofert pracy. Aby bazie nie było smutno &mdash; dodaj nową ofertę do bazy korzystając z linka „Dodaj nową ofertę” poniżej. (Jeżeli go nie ma &mdash;
+  = link_to "zaloguj się", '/log-in'
+  )</p>
 
-= link_to "Dodaj nową ofertę", '/offers/new'
+= link_to "Dodaj nową ofertę", '/offers/new' if logged_in?
