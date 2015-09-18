@@ -1,7 +1,12 @@
-= form_for @new_offer do |f|
+= form_for @offer do |f|
   .form-group
     = f.label :content, "Tytuł:"
     = f.text_field :title, :class => "form-control"
+  .form-group
+    = f.check_box :show_daar
+    = f.label :show_daar, "Wyświetl na DAAR"
+    = f.check_box :show_wop
+    = f.label :show_wop, "Wyświetl na WOP"
 
   .row
     .form-group

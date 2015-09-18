@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_locale
   before_action :which_domain
-  helper_method :current_user, :current_domain
+  helper_method :current_user, :current_domain, :logged_in?
 
   def default_url_options(options = {})
     { locale: I18n.locale }.merge options
@@ -28,6 +28,19 @@ class ApplicationController < ActionController::Base
 
   def current_domain
     session[:domain] || :daar
+  end
+
+  def wop?
+    current_domain == :wop
+  end
+
+  def daar?
+    current_domain == :daar
+  end
+
+  def logged_in?
+    return true if current_user
+    nil
   end
 
 private
