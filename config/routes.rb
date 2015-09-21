@@ -17,7 +17,6 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'pages#home'
-  get '/kontakt' => 'contacts#new'
   get '/angebote' => 'offers#index', locale: 'de'
   get '/oferty' => 'offers#index', locale: 'pl'
   get '/pracodawca' => 'pages#employer', locale: 'pl'
@@ -25,6 +24,7 @@ Rails.application.routes.draw do
 
   get "/:locale" => 'pages#home', locale: /pl|de/
   get "/kontakt/:locale" => "contacts#new", locale: /pl|de/
+  get '/kontakt' => 'contacts#new'
   get "/contact/:locale" => "contacts#new", locale: /pl|de/
   get "/offers/:locale" => "pages#offers", locale: /pl|de/
   get "/employer/:locale" => "pages#employer", locale: /pl|de/
