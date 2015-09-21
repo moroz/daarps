@@ -1,0 +1,18 @@
+%h2 Stellenangebote
+
+Unsere Firma hat viele Jahre Erfahrung in internationaler Arbeitsvermittlung. Deswegen können wir Ihnen garantieren:
+%li Sicherheit &mdash; wir senden unsere Arbeitnehmer nur an geprüfte und zuverlässige Kunden.
+%li Unterkunft &mdash; entweder finden wir für Sie Unterkunft, oder helfen wir Ihnen, Unterkunft zu finden.
+%li Betreuung am Ort &mdash; ein polnischsprachiger Berater wird Ihnen helfen, sich in einer neuen Umgebung zu akklimatisieren.
+%li Kostenlose Arbeitsvermittlung &mdash; wir nehmen von Ihnen keinen Gebühr.
+
+Momentan suchen wir Leute für die Stellen:
+- unless @offers.empty?
+  %ul
+    = render @offers, :partial => 'offers/offer_list'
+- else
+  <p>W tej chwili w bazie nie ma żadnych ofert pracy. Aby bazie nie było smutno &mdash; dodaj nową ofertę do bazy korzystając z linka „Dodaj nową ofertę” poniżej. (Jeżeli go nie ma &mdash;
+  = link_to "zaloguj się", '/log-in'
+  )</p>
+
+= link_to "Dodaj nową ofertę", '/offers/new' if logged_in?
