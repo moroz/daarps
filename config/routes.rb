@@ -25,6 +25,7 @@ Rails.application.routes.draw do
 
   get "/:locale" => 'pages#home', locale: /pl|de/
   get "/kontakt/:locale" => "contacts#new", locale: /pl|de/
+  get "/contact/:locale" => "contacts#new", locale: /pl|de/
   get "/offers/:locale" => "pages#offers", locale: /pl|de/
   get "/employer/:locale" => "pages#employer", locale: /pl|de/
 end
