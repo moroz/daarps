@@ -1,0 +1,8 @@
+- if logged_in?
+  = link_to "Edytuj", edit_offer_path(offer)
+  = link_to "Usuń", { action: :destroy, id: offer.id }, method: :delete, data: {confirm: "Czy na pewno chcesz usunąć tę ofertę?"}
+%p
+  = link_to "Spis ofert", { :controller => :offers, :action => :index }
+%h2= offer.title
+.timestamp= offer.updated_at
+= textilize offer.content

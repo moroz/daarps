@@ -1,0 +1,3 @@
+$('#offer_form').fadeToggle();
+$('#new_offer').append("<%= j render 'display_offer', :offer => @offer %>");
+history.pushState(null, document.title, "<%= offer_path(@offer) %>");

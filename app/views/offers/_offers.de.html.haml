@@ -1,0 +1,9 @@
+- unless @offers.empty?
+  %ul
+    = render @offers, :partial => 'offers/offer_list'
+- else
+  <p>Momentan gibt es in der Datenbase keine Stellenangebote. Damit die Base nicht traurig wir, füge neue Angebote hinzu mit Hilfe des Linkes "Neues Angebot hinzufügen" unten. Wenn es kein Link gibt,
+  = link_to "melde Dich an.", '/log-in'
+  )</p>
+
+= link_to "Neues Angebot hinzufügen", '/offers/new' if logged_in?

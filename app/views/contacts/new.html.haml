@@ -2,9 +2,12 @@
   %h3= t("dane_kontaktowe")
   %p
     = t("email")
-    info&#64;workonpersonal&#46;pl<br/>
+    biuro&#64;workonpersonal&#46;pl<br/>
     = t("tel")
     +48 515 287 274<br/>
+    DAAR Personal Service GmbH,<br />
+    Hegelallee&nbsp;1,<br />
+    14467 Potsdam<br />
     = link_to "www.workonpersonal.pl", "http://www.workonpersonal.pl"
 
   %p
@@ -27,27 +30,8 @@
     agnieszka&#46;mlynarczyk&#64;op&#46;pl
 
   %p
-    %strong Rafał Szczęsny<br/>
+    %strong Właściciele:
+    %br
+    %strong Rafał Szczęsny, Anna Staniecka<br/>
     = t("tel")
     +48 607 968 294<br/>
-    = t("email_short")
-    rafal&#46;szczesny&#64;op&#46;pl
-
-.col-sm-7{:style => "display: none;"}
-  %h3= t("formularz_kontaktowy")
-
-  = form_for @contact do |f|
-    .form-group
-      = f.label :name, t("name")
-      = f.text_field :name, :required => true, :class => "form-control"
-    .form-group
-      = f.label :email, t("email")
-      = f.text_field :email, :required => true, :class => "form-control"
-    .form-group
-      = f.label :message, t("message")
-      = f.text_area :message, :required => true, :rows => 8, :class => "form-control"
-    .hidden
-      = f.text_field :nickname, :hint => 'Leave this field blank!'
-      <br />
-    .form-group
-      = f.submit t("send"), :class=> "btn btn-primary form-control"

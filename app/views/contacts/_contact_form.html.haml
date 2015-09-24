@@ -1,0 +1,18 @@
+.col-sm-7{:style => "display: none;"}
+  %h3= t("formularz_kontaktowy")
+
+  = form_for @contact do |f|
+    .form-group
+      = f.label :name, t("name")
+      = f.text_field :name, :required => true, :class => "form-control"
+    .form-group
+      = f.label :email, t("email")
+      = f.text_field :email, :required => true, :class => "form-control"
+    .form-group
+      = f.label :message, t("message")
+      = f.text_area :message, :required => true, :rows => 8, :class => "form-control"
+    .hidden
+      = f.text_field :nickname, :hint => 'Leave this field blank!'
+      <br />
+    .form-group
+      = f.submit t("send"), :class=> "btn btn-primary form-control"

@@ -22,8 +22,13 @@ class OffersController < ApplicationController
   def create
     @offer = Offer.new(offer_params)
     if @offer.save
-      flash[:success] = "Oferta została dodana."
-      redirect_to @offer
+      respond_to do |format|
+        format.html {
+          flash[:success] = "Oferta została dodana."
+          redirect_to @offer
+        }
+        format.js
+      end
     else
       flash[:danger] = "Przy zapisywaniu oferty wystąpił błąd."
       @new_offer = @offer
@@ -33,8 +38,13 @@ class OffersController < ApplicationController
 
   def update
     if @offer.update(offer_params)
-      flash[:success] = "Oferta została zapisana."
-      redirect_to @offer
+      respond_to do |format|
+        format.html {
+          flash[:success] = "Oferta została zapisana."
+          redirect_to @offer
+        }
+        format.js { render 'create' }
+      end
     else
       flash[:danger] = "Przy zmianie oferty wystąpił błąd."
       render 'offers/new'

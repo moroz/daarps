@@ -1,23 +1,26 @@
-= form_for @offer do |f|
-  .form-group
-    = f.label :content, "Tytuł:"
-    = f.text_field :title, :class => "form-control"
-  .form-group
-    = f.check_box :show_daar
-    = f.label :show_daar, "Wyświetl na DAAR"
-    = f.check_box :show_wop
-    = f.label :show_wop, "Wyświetl na WOP"
+%section#new_offer
 
-  .row
+%section#offer_form
+  = form_for @offer, remote: true do |f|
     .form-group
-      .col-sm-9
-        = f.label :content, "Opis oferty:"
-        = f.text_area :content, :class => "form-control offers__form--textarea", :rows => 10
-    .col-sm-3
-      .offers__hints.round
-        W tekście oferty można używać formatowania:<br/>
-        <strong>*pogrubienie*</strong><br/>
-        <em>_tekst pochyły_</em><br/>
-        = link_to "Więcej informacji", "http://redcloth.org/textile"
+      = f.label :content, "Tytuł:"
+      = f.text_field :title, :class => "form-control"
+    .form-group
+      = f.check_box :show_daar
+      = f.label :show_daar, "Wyświetl na DAAR"
+      = f.check_box :show_wop
+      = f.label :show_wop, "Wyświetl na WOP"
 
-  = f.submit "Zapisz ofertę"
+    .row
+      .form-group
+        .col-sm-9
+          = f.label :content, "Opis oferty:"
+          = f.text_area :content, :class => "form-control offers__form--textarea", :rows => 10
+      .col-sm-3
+        .offers__hints.round
+          W tekście oferty można używać formatowania:<br/>
+          <strong>*pogrubienie*</strong><br/>
+          <em>_tekst pochyły_</em><br/>
+          = link_to "Więcej informacji", "http://redcloth.org/textile"
+
+    = f.submit "Zapisz ofertę"

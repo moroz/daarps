@@ -1,6 +1,1 @@
-- if logged_in?
-  = link_to "Edytuj", edit_offer_path(@offer)
-  = link_to "Usuń", { action: :destroy, id: @offer.id }, method: :delete, data: {confirm: "Czy na pewno chcesz usunąć tę ofertę?"}
-%h2= @offer.title
-.timestamp= @offer.updated_at
-= textilize @offer.content
+= render 'display_offer', :offer => @offer
