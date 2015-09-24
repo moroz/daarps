@@ -1,2 +1,4 @@
-.offerlist
+.offerlist.round{:id => "offer_#{offer.id}"}
   = link_to offer.title, "/offers/#{current_locale}/#{offer.id}"
+  - if logged_in?
+    = link_to "Usuń", { action: :destroy, id: offer.id }, method: :delete, data: {confirm: "Czy na pewno chcesz usunąć ofertę: #{offer.title}?"}, :class => "btn btn-xs btn-danger delete_offer", :remote => true

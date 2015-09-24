@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     if @user
       flash[:success] = "Zostałeś pomyślnie zalogowany."
       session[:user_id] = @user.id
-      redirect_to "/"
+      redirect_to offers_path
     else
       flash[:warning] = "Wystąpił problem przy logowaniu."
       redirect_to log_in_path
@@ -14,6 +14,6 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     flash[:success] = "Zostałeś pomyślnie wylogowany."
-    redirect_to "/"
+    redirect_to root_path
   end
 end

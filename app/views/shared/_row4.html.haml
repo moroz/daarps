@@ -3,12 +3,14 @@
     - if current_domain == :daar
       DAAR Personal Service GmbH,
       Hegelallee&nbsp;1,
-      14467 Potsdam<br />
+      14467 Potsdam
     - else
       Work On Personal Ltd.,
       71 Sutton Hall Road, Hounslow,
-      TW5 OPX London<br />
-
-    <small>Made by
+      TW5 OPX London
+    - if logged_in?
+      &bull;
+      %strong= link_to "Log out", '/log-out'
+    <br/><small>Made by
     = link_to "Karol Moroz", "http://elefanto.vot.pl"
     using Rails 4 and Bootstrap</small>

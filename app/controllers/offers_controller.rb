@@ -53,8 +53,13 @@ class OffersController < ApplicationController
 
   def destroy
     if @offer.delete
-      flash[:success] = "Oferta została usunięta."
-      redirect_to '/offers'
+      respond_to do |format|
+        format.html {
+          flash[:success] = "Oferta została usunięta."
+          redirect_to '/offers'
+        }
+        format.js { render :layout => false }
+      end
     end
   end
 

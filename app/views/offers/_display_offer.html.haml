@@ -1,8 +1,9 @@
 - if logged_in?
-  = link_to "Edytuj", edit_offer_path(offer)
-  = link_to "Usuń", { action: :destroy, id: offer.id }, method: :delete, data: {confirm: "Czy na pewno chcesz usunąć tę ofertę?"}
+  .offer__buttons
+    = link_to "Edytuj", edit_offer_path(offer), :class => "btn btn-success"
+    = link_to "Usuń", { action: :destroy, id: offer.id }, method: :delete, data: {confirm: "Czy na pewno chcesz usunąć tę ofertę?"}, :class => "btn btn-danger"
 %p
-  = link_to "Spis ofert", { :controller => :offers, :action => :index }
+  = link_to "⇦ Powrót", { :controller => :offers, :action => :index }
 %h2= offer.title
 .timestamp= offer.updated_at
 = textilize offer.content
