@@ -17,7 +17,7 @@
   margin-bottom: 1em;
 }
 
-.offerlist {
+.offer__li {
   padding: 1em;
   border: solid 1px #999;
   background-color: #eee;
@@ -28,4 +28,18 @@
 
 .delete_offer {
   float: right;
+}
+
+.offer__newoffer {
+  margin-bottom: 1em;
+}
+
+.offer__list {
+  margin-top: 1em;
+}
+
+@media(min-width: 600px) {
+  .offer__li {
+    width: 95%;
+  }
 }

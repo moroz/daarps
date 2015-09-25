@@ -1,6 +1,9 @@
-= link_to "Neues Angebot hinzufügen", '/offers/new' if logged_in?
+- if logged_in?
+  = link_to "Neues Angebot hinzufügen", '/offers/new', :class => "btn btn-primary offer__newoffer"
+  %br
+
 - unless @offers.empty?
-  %ul
+  .offer__list
     = render @offers, :partial => 'offers/offer_list'
 - else
   %p
