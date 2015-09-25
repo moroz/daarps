@@ -5,7 +5,6 @@ class OffersController < ApplicationController
   def index
     if wop?
       @offers = Offer.where(show_wop: true).all
-      render 'index_wop'
     else
       @offers = Offer.where(show_daar: true).all
     end
