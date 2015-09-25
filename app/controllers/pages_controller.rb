@@ -18,5 +18,8 @@ class PagesController < ApplicationController
 
   def employer
     @title = t("employer")
+    if wop?
+      render 'employer_wop'
+    end
   end
 end

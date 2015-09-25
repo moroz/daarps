@@ -1,14 +1,16 @@
 .col-sm-5
   %h3= t("dane_kontaktowe")
   %p
-    = t("email")
-    biuro&#64;workonpersonal&#46;pl<br/>
-    = t("tel")
-    +48 515 287 274<br/>
     DAAR Personal Service GmbH,<br />
     Hegelallee&nbsp;1,<br />
     14467 Potsdam<br />
-    = link_to "www.workonpersonal.pl", "http://www.workonpersonal.pl"
+    = t("tel")
+    +49 36462 92715<br/>
+    = (t "handy")
+    +49 177 3895604<br/>
+    = t("email")
+    biuro&#64;daar-ps&#46;de<br/>
+    = link_to "www.daar-ps.de", "http://www.daar-ps.de"
 
   %p
     %strong= t("konsultanci")
@@ -17,8 +19,7 @@
     = t("tel")
     +49 36462 92715<br/>
     = (t "handy")
-    +49 177 3895604
-    %br
+    +49 177 3895604<br/>
     = t("email_short")
     dariusz&#46;wierzbicki&#64;daar-ps&#46;de
 
@@ -30,8 +31,9 @@
     agnieszka&#46;mlynarczyk&#64;op&#46;pl
 
   %p
-    %strong Właściciele:
+    %strong= t("owner")
     %br
-    %strong Rafał Szczęsny, Anna Staniecka<br/>
-    = t("tel")
-    +48 607 968 294<br/>
+    %strong Rafał Szczęsny
+    &mdash; Geschäftsführer<br/>
+    %strong Anna Staniecka
+    &mdash; Geschäftsführerin<br/>

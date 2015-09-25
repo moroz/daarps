@@ -1,6 +1,9 @@
 class ContactsController < ApplicationController
   def new
-    @contact = Contact.new
+    #@contact = Contact.new
+    if wop?
+      render 'contacts/new_wop'
+    end
   end
 
   def create

@@ -37,7 +37,7 @@ class ApplicationController < ActionController::Base
   end
 
   def wop?
-    current_domain == :wop
+    current_domain == :wop || params[:wop]
   end
 
   def daar?
