@@ -1,4 +1,6 @@
-= link_to "Dodaj nową ofertę", '/offers/new', :class => "btn btn-primary" if logged_in?
+- if logged_in?
+  = link_to "Dodaj nową ofertę", '/offers/new', :class => "btn btn-primary"
+  %br
 
 - unless @offers.empty?
   %ul
