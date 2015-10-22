@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_locale
   before_action :which_domain
-  helper_method :current_user, :current_domain, :logged_in?
+  helper_method :current_user, :logged_in?
   include DomainName
 
   def default_url_options(options = {})
@@ -23,18 +23,6 @@ class ApplicationController < ActionController::Base
     else
       I18n.locale = http_accept_language.compatible_language_from(I18n.available_locales)
     end
-  end
-
-  def which_domain
-    if request.domain =~ /workon/
-      session[:domain] = :wop
-    else
-      session[:domain] = :daar
-    end
-  end
-
-  def current_domain
-    session[:domain] || :daar
   end
 
   def logged_in?

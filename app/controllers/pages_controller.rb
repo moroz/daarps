@@ -24,5 +24,6 @@ class PagesController < ApplicationController
   end
 
   def impressum
+    @tiutle = "Impressum"
   end
 end
