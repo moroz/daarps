@@ -22,4 +22,7 @@ class PagesController < ApplicationController
       render 'employer_wop'
     end
   end
+
+  def impressum
+  end
 end

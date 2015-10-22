@@ -1,11 +1,13 @@
 .row2
   .wrapper.container
     .row
-      .col-sm-3
+      .col-sm-2
         = link_to t("home"), root_path, :locale => current_locale
-      .col-sm-3
+      .col-sm-2
         = link_to t("contact"), :controller => :contacts, :action => :new, :locale => current_locale
       .col-sm-3
         = link_to t("offers"), :controller => :offers, :action => :index, :locale => current_locale
       .col-sm-3
         = link_to t("employer"), :controller => :pages, :action => :employer, :locale => current_locale
+      .col-sm-2
+        = link_to "Impressum", :controller => :pages, :action => :impressum, :locale => current_locale

@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   get '/angebote' => 'offers#index', locale: 'de'
   get '/oferty' => 'offers#index', locale: 'pl'
+  get '/impressum' => 'pages#impressum'
 
   get "/:locale" => 'pages#home', locale: /pl|de/
   get "/kontakt/(:locale)" => "contacts#new", locale: /pl|de/
