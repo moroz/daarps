@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
     elsif request.domain =~ /workon/
       I18n.locale = :pl
     else
-      I18n.locale = http_accept_language.compatible_language_from(I18n.available_locales)
+      I18n.locale = :de
     end
   end
 
