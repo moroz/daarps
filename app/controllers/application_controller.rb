@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   before_action :which_domain
   helper_method :current_user, :logged_in?
   include DomainName
+  include Locales
 
   def default_url_options(options = {})
     { locale: I18n.locale }.merge options

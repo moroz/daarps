@@ -1,0 +1,9 @@
+= form_for @page do |f|
+  %p
+    Edycja strony:
+    = @page.title
+    = @page.language
+  .form-group
+    = f.text_area :content, :rows => 20, :class => "form-control"
+  .form-group
+    = f.submit "Zatwierdź zmiany", :class => "form-control button"

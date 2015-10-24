@@ -1,6 +1,7 @@
 class OffersController < ApplicationController
   before_action :find_offer, :only => [:show, :edit, :update, :destroy]
   before_action :check_if_allowed, :only => [:new, :edit, :destroy]
+  include Permissions
 
   def index
     if wop?
@@ -63,13 +64,6 @@ class OffersController < ApplicationController
   end
 
   private
-    def check_if_allowed
-      unless logged_in?
-        flash[:danger] = "Opcja dostępna wyłącznie po zalogowaniu."
-        redirect :back
-      end
-    end
-
     def find_offer
       @offer = Offer.find(params[:id])
     end

@@ -1,0 +1,3 @@
+- if logged_in?
+  = link_to "Edytuj stronę", edit_page_path(@page)
+= render_as_haml @page.content, self
