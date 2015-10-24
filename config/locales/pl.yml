@@ -15,6 +15,7 @@ pl:
   handy: "tel. kom."
   tel: "tel."
   konsultanci: "Konsultanci:"
+  impressum: "Impressum"
   owner: "Właściciele:"
 
   will_paginate:
