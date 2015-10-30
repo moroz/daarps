@@ -34,11 +34,22 @@ class PagesController < ApplicationController
     redirect_to root_url
   end
 
+  def contact
+    if wop?
+      find_page_in_database('contact_wop')
+    else
+      find_page_in_database
+    end
+  end
+
   private
-    def find_page_in_database
-      @page = Page.where("title = ? and language = ?", action_name, current_locale).first
+    def find_page_in_database(action = nil)
+      action ||= action_name
+      @page = Page.where("title = ? and language = ?", action, current_locale).first
       if @page
         render 'show', :page => @page
+      else
+        render action
       end
     end
 
