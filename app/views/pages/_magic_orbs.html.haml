@@ -6,5 +6,5 @@
     %h3= link_to t("employer"), :controller => :pages, :action => :employer, :locale => current_locale
     = link_to (image_tag 'magic_orb2.jpg', :class => "magic_orbs--circle img-responsive img-circle circle-block"), :controller => :pages, :action => :employer, :locale => current_locale
   .col-sm-4
-    %h3= link_to "Kontakt", :action => :new, :controller => :contacts, :locale => current_locale
+    %h3= link_to "Kontakt", :action => :contact, :controller => :pages, :locale => current_locale
     = link_to (image_tag 'magic_orb4.jpg', :class => "magic_orbs--circle img-responsive img-circle circle-block"), :action => :new, :controller => :contacts, :locale => current_locale
