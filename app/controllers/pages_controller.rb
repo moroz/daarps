@@ -8,7 +8,7 @@ class PagesController < ApplicationController
 
   def home
     if current_domain == :wop
-      render 'home_wop'
+      render 'home_wop' # Tę akcję też można by przenieść do bazy
     else
       find_page_in_database
     end
@@ -16,7 +16,7 @@ class PagesController < ApplicationController
 
   def employer
     if wop?
-      render 'employer_wop'
+      render 'employer_wop' # Tę akcję też można by przenieść do bazy
     else
       find_page_in_database
     end
