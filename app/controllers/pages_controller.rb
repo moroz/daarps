@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   before_action :set_title
   before_action :find_page_in_database
   skip_before_action :set_title, :only => [:show,:edit]
-  skip_before_action :find_page_in_database, :only => [:show,:home,:employer,:edit]
+  skip_before_action :find_page_in_database, :only => [:show,:home,:employer,:edit,:contact]
 
   def home
     if current_domain == :wop
