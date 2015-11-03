@@ -52,7 +52,7 @@ class PagesController < ApplicationController
   private
     def find_page_in_database(action = nil)
       action ||= action_name
-      @page = Page.where("title = ? and language = ?", action, current_locale).first
+      @page = Page.where("title = ? and language like ?", action, "%#{current_locale.to_s}%").first
       if @page
         render 'show', :page => @page
       else
