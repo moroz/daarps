@@ -6,7 +6,7 @@ module DomainName
   end
 
   def daar?
-    current_domain == :daar
+    current_domain == :daar || !params[:wop]
   end
 
   def domain_for_title
@@ -18,7 +18,7 @@ module DomainName
   end
 
   def which_domain
-    if request.domain =~ /workon/
+    if request.domain =~ /workon/ || params[:wop]
       session[:domain] = :wop
     else
       session[:domain] = :daar

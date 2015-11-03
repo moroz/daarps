@@ -1,10 +1,11 @@
 class PagesController < ApplicationController
   helper_method :current_domain
   include Permissions
+  include HamlTools
   before_action :set_title
   before_action :find_page_in_database
   skip_before_action :set_title, :only => [:show,:edit]
-  skip_before_action :find_page_in_database, :only => [:show,:home,:employer,:edit,:contact]
+  skip_before_action :find_page_in_database, :only => [:show,:home,:employer,:edit,:contact,:update]
 
   def home
     if current_domain == :wop
@@ -28,10 +29,16 @@ class PagesController < ApplicationController
 
   def update
     @page = Page.find(params[:id])
-    if @page.update(page_params)
-      flash[:success] = "Strona została zaktualizowana"
+    if validate_haml(page_params[:content])
+      if @page.update(page_params)
+        flash[:success] = "Strona została zaktualizowana"
+        redirect_to root_url
+      end
+    else
+      flash[:danger] = "Błąd składni. Strona nie mogła zostać zapisana."
+      render 'edit'
     end
-    redirect_to root_url
+    #redirect_to root_url
   end
 
   def contact
