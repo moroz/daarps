@@ -25,14 +25,16 @@ class PagesController < ApplicationController
 
   def edit
     @page = Page.find(params[:id])
+    session[:return_to] ||= request.referer
   end
 
   def update
     @page = Page.find(params[:id])
+    @redirect_path = params[:redirect_path]
     if validate_haml(page_params[:content])
       if @page.update(page_params)
-        flash[:success] = "Strona została zaktualizowana"
-        redirect_to root_url
+        flash[:success] = "Strona została zaktualizowana."
+        redirect_to session.delete(:return_to)
       end
     else
       flash[:danger] = "Błąd składni. Strona nie mogła zostać zapisana."
