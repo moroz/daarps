@@ -2,11 +2,11 @@ module DomainName
   extend ActiveSupport::Concern
 
   def wop?
-    current_domain == :wop || params[:wop]
+    current_domain == :wop
   end
 
   def daar?
-    current_domain == :daar || !params[:wop]
+    current_domain == :daar
   end
 
   def domain_for_title
