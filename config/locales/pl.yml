@@ -19,6 +19,7 @@ pl:
   owner: "Właściciele:"
   personaldisponent: "Specjalista ds. personalno-organizacyjnych:"
   personaldisponentin: "Specjalista ds. personalno-organizacyjnych:"
+  fax: "Fax:"
 
   will_paginate:
     next_label: "Następna &#8594;"
