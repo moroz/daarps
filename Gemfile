@@ -19,6 +19,7 @@ gem 'therubyracer', platforms: :ruby
 #gem 'thin'
 gem 'puma'
 gem 'http_accept_language'
+gem 'ahoy_matey'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
