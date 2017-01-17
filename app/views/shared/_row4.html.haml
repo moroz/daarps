@@ -18,6 +18,5 @@
     - if logged_in?
       &bull;
       %strong= link_to "Log out", '/log-out'
-    <br/><small>Made by
-    = link_to "Karol Moroz", "http://elefanto.vot.pl"
-    using Rails 4 and Bootstrap</small>
+    <br/>
+    = "Visited " + pluralize(Visit.count, "time") + "."
