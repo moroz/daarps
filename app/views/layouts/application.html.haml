@@ -18,6 +18,8 @@
       .wrapper.container
         - flash.each do |key, value|
           %div{:class => "row2__flashbox alert alert-#{key}"}= value
+        - unless logged_in?
+          = link_to "Edytuj stronę", new_page_path
         = yield
     = render "shared/row4"
     = render 'shared/ga'

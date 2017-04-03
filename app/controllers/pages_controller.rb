@@ -1,11 +1,9 @@
 class PagesController < ApplicationController
-  helper_method :current_domain
-  include Permissions
   include HamlTools
   before_action :set_title
   before_action :find_page_in_database
   skip_before_action :set_title, :only => [:show,:edit]
-  skip_before_action :find_page_in_database, :only => [:show,:home,:employer,:edit,:contact,:update]
+  skip_before_action :find_page_in_database, :only => [:show,:home,:employer,:edit,:contact,:update, :new]
 
   def home
     if current_domain == :wop
@@ -28,19 +26,27 @@ class PagesController < ApplicationController
     session[:return_to] ||= request.referer
   end
 
+  def new
+    @page = Page.new
+    render 'edit'
+  end
+
+  def create
+    @page = Page.new(page_params)
+    if @page.save
+      flash[:success] = "Strona została zapisana."
+      redirect_to @page
+    end
+  end
   def update
     @page = Page.find(params[:id])
     @redirect_path = params[:redirect_path]
-    if validate_haml(page_params[:content])
-      if @page.update(page_params)
-        flash[:success] = "Strona została zaktualizowana."
-        redirect_to session.delete(:return_to)
-      end
+    if @page.update(page_params)
+      flash[:success] = "Strona została zaktualizowana."
+      redirect_to session.delete(:return_to)
     else
-      flash[:danger] = "Błąd składni. Strona nie mogła zostać zapisana."
       render 'edit'
     end
-    #redirect_to root_url
   end
 
   def contact
@@ -52,21 +58,21 @@ class PagesController < ApplicationController
   end
 
   private
-    def find_page_in_database(action = nil)
-      action ||= action_name
-      @page = Page.where("title = ? and language like ?", action, "%#{current_locale.to_s}%").first
-      if @page
-        render 'show', :page => @page
-      else
-        render action
-      end
+  def find_page_in_database(action = nil)
+    action ||= action_name
+    @page = Page.where("title = ? and language like ?", action, "%#{current_locale.to_s}%").first
+    if @page
+      render 'show', :page => @page
+    else
+      render action
     end
+  end
 
-    def set_title
-      @title = t(action_name)
-    end
+  def set_title
+    @title = t(action_name)
+  end
 
-    def page_params
-      params.require(:page).permit(:title, :content, :language)
-    end
+  def page_params
+    params.require(:page).permit(:title, :content, :language)
+  end
 end

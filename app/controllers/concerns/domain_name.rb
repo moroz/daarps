@@ -1,6 +1,4 @@
 module DomainName
-  extend ActiveSupport::Concern
-
   def wop?
     current_domain == :wop
   end

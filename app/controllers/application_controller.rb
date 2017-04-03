@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_locale
   before_action :which_domain
-  helper_method :current_user, :logged_in?
+  helper_method :current_user, :logged_in?, :current_domain
   include DomainName
   include Locales
 
@@ -12,26 +12,21 @@ class ApplicationController < ActionController::Base
     { locale: I18n.locale }.merge options
   end
 
-  # def set_locale
-  #   I18n.locale = params[:locale] || I18n.default_locale
-  # end
-
   def set_locale
-    if params[:locale]
-      I18n.locale = params[:locale]
-    elsif request.domain =~ /workon/
-      I18n.locale = :pl
-    else
-      I18n.locale = :de
-    end
+    I18n.locale = params[:locale] || :pl
   end
 
   def logged_in?
-    return true if current_user
-    nil
+    !!current_user
   end
 
-private
+  private
+  def check_if_allowed
+    unless logged_in?
+      flash[:danger] = "Opcja dostępna wyłącznie po zalogowaniu."
+      redirect :back
+    end
+  end
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]

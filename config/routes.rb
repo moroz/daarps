@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   get '/offers/:id' => 'offers#show'
   get '/offers/:locale/:id' => 'offers#show', locale: /pl|de/
   resources :offers#, :only => [:index, :show, :new, :create]
-  resources :pages, :only => [:edit,:update]
 
   get '/log-in' => 'sessions#new'
   post '/log-in' => 'sessions#create'
@@ -20,4 +19,5 @@ Rails.application.routes.draw do
   get "/kontakt/(:locale)" => 'pages#contact', locale: /pl|de/
   get "/contact/(:locale)" => "pages#contact", locale: /pl|de/
   get "/employer/(:locale)" => "pages#employer", locale: /pl|de/
+  resources :pages
 end
