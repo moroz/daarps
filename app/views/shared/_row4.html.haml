@@ -1,20 +1,8 @@
 .row4
   .wrapper.container
-    - if daar?
-      DAAR Personal Service GmbH,
-      Hegelallee&nbsp;1,
-      14467 Potsdam
-    - else
-      Work On Personal Ltd.,
-      71 Sutton Hall Road, Hounslow,
-      TW5 OPX London
-    - if daar?
-      %br
-      %strong= link_to "AGB für Arbeitnehmerüberlassung", "/AGB-Arbeitnehmerüberlassung.pdf", :target => "_blank"
-      &bull;
-      %strong= link_to "AGB für Personalvermittlung", "/AGB-Personalvermittlung.pdf", :target => "_blank"
-      &bull;
-      %strong= link_to "Datenschutz", "/Datenschutz.pdf", :target => "_blank"
+    Work On Personal Ltd.,
+    71 Sutton Hall Road, Hounslow,
+    TW5 OPX London
     - if logged_in?
       &bull;
       %strong= link_to "Log out", '/log-out'

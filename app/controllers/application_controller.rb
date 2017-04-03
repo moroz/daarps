@@ -3,32 +3,35 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :set_locale
-  before_action :which_domain
-  helper_method :current_user, :logged_in?, :current_domain
-  include DomainName
-  include Locales
-
-  def default_url_options(options = {})
-    { locale: I18n.locale }.merge options
-  end
+  helper_method :current_user, :logged_in?, :current_domain, :current_locale
 
   def set_locale
-    I18n.locale = params[:locale] || :pl
+    session[:locale] = params[:locale] if params[:locale].present?
+    I18n.locale = session[:locale] || default_locale
   end
 
   def logged_in?
     !!current_user
   end
 
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+
+  def current_locale
+    I18n.locale
+  end
+
   private
+  
+  def default_locale
+    :pl
+  end
+
   def check_if_allowed
     unless logged_in?
       flash[:danger] = "Opcja dostępna wyłącznie po zalogowaniu."
       redirect :back
     end
-  end
-
-  def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 end

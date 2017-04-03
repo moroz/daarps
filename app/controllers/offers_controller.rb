@@ -4,11 +4,7 @@ class OffersController < ApplicationController
   include Permissions
 
   def index
-    if wop?
-      @offers = Offer.where(show_wop: true).all
-    else
-      @offers = Offer.where(show_daar: true).all
-    end
+    @offers = Offer.all
   end
 
   def edit

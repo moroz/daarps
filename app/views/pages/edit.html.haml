@@ -1,8 +1,13 @@
 = form_for @page do |f|
   %p
     Edycja strony:
-    = @page.title
     = @page.language
+  .form-group
+    = f.label :title, "Nazwa widoku:"
+    = f.text_field :title
+  .form-group
+    = f.label :title, "Język:"
+    = f.select :language, ["pl", "de"]
   .form-group
     = f.text_area :content, :rows => 20, :class => "form-control", :style => 'font-family: monospace;'
   .form-group

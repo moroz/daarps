@@ -1,24 +1,15 @@
 class PagesController < ApplicationController
   include HamlTools
-  before_action :set_title
-  before_action :find_page_in_database
-  skip_before_action :set_title, :only => [:show,:edit]
-  skip_before_action :find_page_in_database, :only => [:show,:home,:employer,:edit,:contact,:update, :new]
+  before_action :set_title, except: [:show, :edit]
 
   def home
-    if current_domain == :wop
-      render 'home_wop' # Tę akcję też można by przenieść do bazy
-    else
-      find_page_in_database
-    end
   end
 
   def employer
-    if wop?
-      render 'employer_wop' # Tę akcję też można by przenieść do bazy
-    else
-      find_page_in_database
-    end
+  end
+
+  def show
+    @page = Page.find(params[:id])
   end
 
   def edit
@@ -50,11 +41,6 @@ class PagesController < ApplicationController
   end
 
   def contact
-    if wop?
-      find_page_in_database('contact_wop')
-    else
-      find_page_in_database
-    end
   end
 
   private
